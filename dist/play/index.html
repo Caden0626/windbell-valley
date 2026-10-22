@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#55784f">
+  <meta name="description" content="沿着小路，和豆丁一起让风铃谷重新生长。探索、种植、修复溪流，还有赶羊与风筝的小小冒险。">
+  <title>小芽小队 · 风铃谷 — Meadowbell</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='16' width='64' height='64' fill='%235c8052'/%3E%3Cpath d='M32 51V29M32 35C12 36 9 22 12 14c15-1 24 7 20 21Zm0-7C30 13 43 8 53 11c2 13-7 20-21 17Z' stroke='%23fff9e9' fill='%23fff9e9' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/fonts.css"><link rel="stylesheet" href="assets/title-font.css"><link rel="stylesheet" href="game.css">
+  <link rel="preload" href="assets/hillside.jpg" as="image">
+</head>
+<body>
+  <svg class="symbol-library" aria-hidden="true"><defs>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 22V11M12 15C3 15 2 9 3 5c7 0 11 4 9 10ZM12 11c0-7 5-10 10-9 1 6-3 11-10 9Z"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24"><path d="M7 15c2-4 8-4 10 0 5 5 0 8-4 6h-2c-5 2-8-1-4-6Z"/><ellipse cx="4" cy="10" rx="2.2" ry="3"/><ellipse cx="9" cy="5" rx="2.2" ry="3"/><ellipse cx="15" cy="5" rx="2.2" ry="3"/><ellipse cx="20" cy="10" rx="2.2" ry="3"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m2 5 7-3 7 3 6-3v17l-6 3-7-3-7 3V5Zm7-3v17m7-14v17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M7 7V5a5 5 0 0 1 10 0v2M5 7h14l2 15H3L5 7Zm3 7h8v5H8v-5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 2C10 7 4 11 4 16a8 8 0 0 0 16 0c0-5-6-9-8-14Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 16c0 3 2 4 4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 12V5a1.5 1.5 0 0 1 3 0v7-9a1.5 1.5 0 0 1 3 0v9-7a1.5 1.5 0 0 1 3 0v8-5a1.5 1.5 0 0 1 3 0v8c0 4-3 6-7 6-3 0-5-1-7-4L2 12c-1-2 1-3 2-2l4 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 3h14a3 3 0 0 1 3 3v16H6a3 3 0 0 1-3-3V3Zm0 15c0-2 2-3 4-3h13M8 3v12m3-8h5m-5 4h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15A9 9 0 0 1 9 3 9 9 0 1 0 20 15Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="m10 2-1 3-3 1-3-1-2 4 3 2v3l-2 2 2 4 3-1 3 1 1 3h4l1-3 3-1 3 1 2-4-3-2v-3l2-2-2-4-3 1-3-1-1-3h-4Z" fill="none" stroke="currentColor" stroke-width="1.5" transform="translate(-1 -1) scale(.95)"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M21 3C5-1-2 12 7 18 15 24 24 14 21 3ZM4 22 17 8" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12c5-10 17-10 22 0-5 10-17 10-22 0Z" stroke="currentColor" stroke-width="1.6" fill="none"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  </defs></svg>
+
+  <section class="title-screen" id="title-screen" aria-labelledby="game-title">
+    <div class="title-art"><div class="title-plane"><img src="assets/hillside.jpg" alt="阳光下，男孩和比格犬躺在开满野花的山坡上"><video id="title-video" muted playsinline loop preload="none" data-src="assets/meadow.mp4" aria-hidden="true"></video></div></div>
+    <a class="studio" href="../"><svg><use href="#i-sprout"/></svg><span>Meadowbell</span></a>
+    <span class="title-chapter">第一章 · 让溪水回来</span>
+    <div class="title-copy"><p class="title-kicker">HOLLYOAK'S PLUCKY SPROUT SQUAD</p><p class="title-series">小芽小队</p><h1 id="game-title">风铃谷</h1><p class="title-description">沿着有风的小路，和豆丁一起<br>种下希望，让山谷重新生长。</p><button class="start-button" id="start-game">一起出发 <svg><use href="#i-arrow"/></svg></button><button class="continue-button" id="continue-game" hidden>继续上次的冒险 <span>↗</span></button><p class="title-note">探索 · 种植 · 伙伴 · 小小的奇迹</p></div>
+    <div class="title-bottom"><span>一个可以慢慢长大的世界</span><button id="title-sound" aria-label="切换声音">声音关闭</button></div>
+  </section>
+
+  <main class="game-app" id="game-app" hidden aria-label="风铃谷游戏">
+    <div class="world" id="world" tabindex="0" aria-label="点击地面行走，点击发光标记互动"><div class="world-plane" id="world-plane"><div class="scene-background" id="scene-background"></div><div class="plot-layer" id="plot-layer"></div><div class="world-hints" id="world-hints"></div><div class="hotspots" id="hotspots"></div><div class="party" id="boy"><canvas width="160" height="320"></canvas></div><div class="party dog" id="dog"><canvas width="240" height="180"></canvas></div><div class="move-target" id="move-target"></div></div><div class="world-grade" id="world-grade"></div></div>
+    <header class="game-header">
+      <button class="game-brand" id="home-menu" aria-label="返回标题"><svg><use href="#i-sprout"/></svg><span>Meadowbell<small>小芽小队 · 风铃谷</small></span></button>
+      <button class="day-card" id="day-details" aria-label="查看天气与当天安排"><span class="weather-icon" id="weather-icon"><svg><use href="#i-sun"/></svg></span><span><b id="day-label">第 1 天</b><span class="action-dots" id="action-dots" aria-label="剩余行动时段"></span></span><small id="time-label">清晨</small></button>
+      <div class="header-actions"><button class="round-button" id="open-map" aria-label="打开山谷地图"><svg><use href="#i-map"/></svg></button><button class="round-button" id="open-bag" aria-label="打开背包"><svg><use href="#i-bag"/></svg></button><button class="round-button" id="open-settings" aria-label="设置与存档"><svg><use href="#i-settings"/></svg></button></div>
+    </header>
+    <div class="location-name"><span id="location-en">THE COTTAGE GARDEN</span><h2 id="location-name">小小菜园</h2></div>
+    <button class="quest-note" id="quest-note" aria-label="查看当前任务"><span class="quest-heading"><i></i>山谷手记<span id="quest-fraction">0 / 6</span></span><strong id="quest-title">让溪水回来</strong><span id="quest-text">先种下第一颗种子。</span><span class="quest-progress"><i id="quest-progress"></i></span></button>
+    <nav class="tool-dock" aria-label="探索工具"><button data-tool="explore" class="selected"><svg><use href="#i-hand"/></svg><span>探索</span><kbd>1</kbd></button><button data-tool="water"><svg><use href="#i-water"/></svg><span>浇水</span><kbd>2</kbd></button><button data-tool="seeds"><svg><use href="#i-sprout"/></svg><span>种植</span><kbd>3</kbd></button><span class="dock-divider"></span><button id="call-dog"><svg><use href="#i-paw"/></svg><span>豆丁</span><kbd>空格</kbd></button><button id="open-journal"><svg><use href="#i-book"/></svg><span>日记</span><kbd>J</kbd></button><button id="open-rest"><svg><use href="#i-moon"/></svg><span>休息</span><kbd>R</kbd></button></nav>
+    <div class="controls-hint" id="controls-hint">点击地面行走 <span>·</span> 点击标记互动 <span>·</span> 按 E 与附近物体互动</div>
+    <span class="save-state" id="save-state">已保存</span><div class="scene-loading" id="scene-loading" hidden><span></span>沿着小路走一会儿…</div>
+    <div class="toast-area" id="toast-area" aria-live="polite" aria-atomic="true"></div>
+    <div class="scene-caption" id="scene-caption" aria-live="polite"></div>
+  </main>
+
+  <dialog class="paper-dialog" id="panel" aria-labelledby="panel-title"><button class="close-dialog" id="close-panel" aria-label="关闭">×</button><div class="panel-eyebrow" id="panel-eyebrow">MEADOWBELL</div><h2 id="panel-title"></h2><div class="panel-content" id="panel-content"></div></dialog>
+  <dialog class="challenge-dialog" id="challenge-panel" aria-labelledby="challenge-title"><div class="challenge-top"><div><span id="challenge-eyebrow">风铃谷的小小冒险</span><h2 id="challenge-title"></h2></div><div class="challenge-score" id="challenge-score"></div><button class="close-dialog" id="close-challenge" aria-label="退出挑战">×</button></div><div class="challenge-stage"><canvas id="challenge-canvas" width="1000" height="600"></canvas><div class="challenge-overlay" id="challenge-overlay"></div></div><div class="challenge-bottom"><span id="challenge-instructions"></span><button class="secondary-button" id="challenge-special">汪！</button></div></dialog>
+  <div class="day-transition" id="day-transition" aria-hidden="true"><svg><use href="#i-sprout"/></svg><span>风吹过，新的故事长出来</span><strong id="new-day-title">第 2 天</strong></div>
+  <input type="file" accept=".json,application/json" id="import-save" hidden>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
